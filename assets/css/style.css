@@ -23,6 +23,7 @@
 	max-width: 960px;
 	font-size: 18px;
 	padding: 5px;
+	border-radius: 50px 15px;
 }
 
 
@@ -33,6 +34,7 @@
 	height: 200px;
 	font-size: 18px;
 	padding: 5px;
+	border-radius: 15px 50px;
 }
 
 
@@ -40,10 +42,11 @@
 .winsLosses {
 	background-color: #baaea0;
 	margin: 20px;
-	max-width: 200px;
+	max-width: 250px;
 	height: 200px;
 	font-size: 18px;
 	padding: 5px;
+	border-radius: 50px 15px;
 }
 
 
@@ -55,7 +58,7 @@
 
 .score {
 	max-width: 600px;
-	margin: 0px 20px 45px 35px;
+	margin: 0px 20px 45px 20px;
 	background-color: #c97126;
 	height: 130px;
 }
@@ -67,3 +70,14 @@
 }
 
 
+
+#wins {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+
+
+#gemTotal {
+	font-color: #fff;
+}
