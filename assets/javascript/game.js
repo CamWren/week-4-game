@@ -1,53 +1,57 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-	var randomNumber = 0
+	//Global variables
 	var wins = 0;
 	var losses = 0;
-	var gem1 = 0;
-	var gem2 = 0;
-	var gem3 = 0;
-	var gem4 = 0;
+	var gem1 = Math.floor(Math.random()*(12-1+1)+1);
+	var gem2 = Math.floor(Math.random()*(12-1+1)+1);
+	var gem3 = Math.floor(Math.random()*(12-1+1)+1);
+	var gem4 = Math.floor(Math.random()*(12-1+1)+1);
 	var gemTotal = 0;
 
 
-
+	//Generates random number for User to try to match
 	function rando(min,max) {
-		return Math.floor(Math.random()*(max-min+1)+min);
-	} 
-		/*Chooses a random number between 19 and 120 to be
-		displayed at the beginning of a game*/
-
-		//ask why the hell that works
-
+		return Math.floor(Math.random()*(120-19+1)+19);
+	};
+		
+	//Places random number in html
 	$('#randomNumber').text(rando);
 
 
+	//Inserts scores into html
+	$("#wins").text(wins);
+	$("#losses").text(losses);
+
+
+	// resets game
 	function gameReset() {
-	gem1 = 0;
-	gem2 = 0;
-	gem3 = 0;
-	gem4 = 0;
-	$('#gemTotal').text(0);
+		rando = Math.floor(Math.random()*(120-19+1)+19);
+		$('#randomNumber').text(rando);
+		gem1 = Math.floor(Math.random()*(12-1+1)+1);
+		gem2 = Math.floor(Math.random()*(12-1+1)+1);
+		gem3 = Math.floor(Math.random()*(12-1+1)+1);
+		gem4 = Math.floor(Math.random()*(12-1+1)+1);
+		gemTotal = 0;
+		$("#gemTotal").text(gemTotal);
 	};
 
 
-
-	function scoreCheck() {
-		if (gemTotal === rando) {
-			wins++;
-			$('#wins').text(wins);
-			gameReset();
-		};
-
-		if (gemTotal > rando) {
-			losses++;
-			$('#losses').text(losses);
-			gameReset();
-		};
+	//Adds wins to wins section
+	function champ() {
+		alert("Winner!");
+		wins++;
+		$("#wins").texts(wins);
+		gameReset();
 	};
 
-
-	//Left off at start game function
+	//Adds wins to wins section
+	function champ() {
+		alert("Loser!");
+		wins++;
+		$("#losses").texts(losses);
+		gameReset();
+	};
 
 
 });

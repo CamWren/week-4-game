@@ -52,13 +52,30 @@
 
 .thumbnail {
 	margin: 20px;
+	width: 200px;
+	height: 200px;
 }
+
+
+
+#greengem {
+	margin: 20px;
+	width: 145px;
+	height: 145px;
+}
+
+
+
+.redgem {
+	margin-left: 35px;
+}
+
 
 
 
 .score {
 	max-width: 600px;
-	margin: 0px 20px 45px 20px;
+	margin: 20px 20px 45px 20px;
 	background-color: #c97126;
 	height: 130px;
 }
