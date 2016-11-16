@@ -29,11 +29,11 @@
 
 .randomNumber {
 	background-color: #baaea0;
-	margin: 20px;
+	margin: 20px 20px 20px 20px;
 	max-width: 400px;
 	height: 200px;
-	font-size: 18px;
-	padding: 5px;
+	font-size: 100px;
+	padding: 10px 5px 5px 90px;
 	border-radius: 15px 50px;
 }
 
@@ -97,4 +97,6 @@
 
 #gemTotal {
 	font-color: #fff;
+	font-size: 36px;
+	margin-left: 255px;
 }

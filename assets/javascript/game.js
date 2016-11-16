@@ -8,20 +8,15 @@ $(document).ready(function() {
 	var gem3 = Math.floor(Math.random()*(12-1+1)+1);
 	var gem4 = Math.floor(Math.random()*(12-1+1)+1);
 	var gemTotal = 0;
-
-
 	//Generates random number for User to try to match
-	function rando(min,max) {
-		return Math.floor(Math.random()*(120-19+1)+19);
-	};
-		
+	var rando = Math.floor(Math.random()*(120-19+1)+19);
+
 	//Places random number in html
 	$('#randomNumber').text(rando);
 
-
 	//Inserts scores into html
-	$("#wins").text(wins);
-	$("#losses").text(losses);
+	$("#wins").text('Wins: ' + wins);
+	$("#losses").text('Losses: ' + losses);
 
 
 	// resets game
@@ -32,26 +27,78 @@ $(document).ready(function() {
 		gem2 = Math.floor(Math.random()*(12-1+1)+1);
 		gem3 = Math.floor(Math.random()*(12-1+1)+1);
 		gem4 = Math.floor(Math.random()*(12-1+1)+1);
-		gemTotal = 0;
-		$("#gemTotal").text(gemTotal);
 	};
 
 
 	//Adds wins to wins section
 	function champ() {
-		alert("Winner!");
+		alert("Winner! Press OK to play again.");
 		wins++;
 		$("#wins").texts(wins);
 		gameReset();
 	};
 
-	//Adds wins to wins section
-	function champ() {
-		alert("Loser!");
-		wins++;
+	//Adds losses to losses section
+	function loser() {
+		alert("Loser! Press OK to play again.");
+		losses++;
 		$("#losses").texts(losses);
 		gameReset();
 	};
+
+
+
+	//click listener functions for gems
+	$('#redgem').on('click', function() {
+		gemTotal = gemTotal + gem1;
+		console.log('New gemTotal= ' + gemTotal);
+		$('#gemTotal').text(gemTotal);
+			if (gemTotal == rando) {
+				champ();
+			}
+			else if (gemTotal > rando) {
+				loser();
+			}
+	});
+
+
+	$('#bluegem').on('click', function() {
+		gemTotal = gemTotal + gem2;
+		console.log('New gemTotal= ' + gemTotal);
+		$('#gemTotal').text(gemTotal);
+			if (gemTotal == rando) {
+				champ();
+			}
+			else if (gemTotal > rando) {
+				loser();
+			}
+	});
+
+
+	$('#yellowgem').on('click', function() {
+		gemTotal = gemTotal + gem3;
+		console.log('New gemTotal= ' + gemTotal);
+		$('#gemTotal').text(gemTotal);
+			if (gemTotal == rando) {
+				champ();
+			}
+			else if (gemTotal > rando) {
+				loser();
+			}
+	});
+
+
+	$('#greengem').on('click', function() {
+		gemTotal = gemTotal + gem4;
+		console.log('New gemTotal= ' + gemTotal);
+		$('#gemTotal').text(gemTotal);
+			if (gemTotal == rando) {
+				champ();
+			}
+			else if (gemTotal > rando) {
+				loser();
+			}
+	});
 
 
 });
