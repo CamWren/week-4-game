@@ -27,6 +27,8 @@ $(document).ready(function() {
 		gem2 = Math.floor(Math.random()*(12-1+1)+1);
 		gem3 = Math.floor(Math.random()*(12-1+1)+1);
 		gem4 = Math.floor(Math.random()*(12-1+1)+1);
+		gemTotal = 0;
+		console.log(gemTotal);
 	};
 
 
@@ -34,7 +36,7 @@ $(document).ready(function() {
 	function champ() {
 		alert("Winner! Press OK to play again.");
 		wins++;
-		$("#wins").texts(wins);
+		$("#wins").text('Wins: ' + wins);
 		gameReset();
 	};
 
@@ -42,7 +44,7 @@ $(document).ready(function() {
 	function loser() {
 		alert("Loser! Press OK to play again.");
 		losses++;
-		$("#losses").texts(losses);
+		$("#losses").text('Losses: ' + losses);
 		gameReset();
 	};
 
